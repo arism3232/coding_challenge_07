@@ -54,3 +54,15 @@ const filterHighValueTransactions = (transactions, filterFunction) => {
 filterHighValueTransactions(transactions, amount => amount > 1000);
 // Expected output: [1200, 3000, 2200]
 
+// Task7 - Closures
+function createBudgetTracker() {
+    let balance = 0;
+    return function(expense) {
+        balance -= expense;
+        console.log(`Current Balance: -$${Math.abs(balance)}`);
+    };
+}; // Writing a function that returns another function to add expenses and keep a running balance. 
+// Test Data
+let budget = createBudgetTracker();
+budget(300); // Expected output: "Current Balance: -$300"
+budget(200); // Expected output: "Current Balance: -$500"
