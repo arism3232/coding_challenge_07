@@ -41,5 +41,16 @@ function calculateLoanInterest(principal, rate, years) {
     let interest = principal * rate * years; // Applying formula.
     console.log(`Total Interest: $${interest.toFixed(2)}`);
 }; // Writing a function that returns total interest.
+// Test Data
 calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
 calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750.00"
+
+// Task6 - Higher-Order Functions
+let transactions = [500, 1200, 3000, 800, 2200];
+const filterHighValueTransactions = (transactions, filterFunction) => {
+    console.log(transactions.filter(filterFunction));
+}; // Writing a higher-order function that filters transactions above $1000.
+// Test Data
+filterHighValueTransactions(transactions, amount => amount > 1000);
+// Expected output: [1200, 3000, 2200]
+
